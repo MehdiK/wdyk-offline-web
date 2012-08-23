@@ -1,6 +1,6 @@
 @using System.Web.Optimization
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="@Url.Action("AppCacheManifest", "OfflineSupport")">
     <head>
         <meta charset="utf-8" />
         <title>@ViewBag.Title - Phone Book</title>

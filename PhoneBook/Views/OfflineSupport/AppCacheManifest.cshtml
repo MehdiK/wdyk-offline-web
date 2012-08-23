@@ -1,0 +1,31 @@
+﻿@using System.Web.Optimization
+@{
+    HttpContext.Current.Response.ContentType = "text/cache-manifest";
+}CACHE MANIFEST
+# forcing the browser to always refresh the cache when online @DateTime.Now
+
+CACHE:
+# pages
+@Url.Action("Index", "Contacts")
+
+# CSS & JS
+@BundleTable.Bundles.ResolveBundleUrl("~/Content/css")
+@BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")
+@BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")
+
+# Images and other static content #
+@Url.Content("~/Images/accent.png") 
+@Url.Content("~/Images/bullet.png")
+@Url.Content("~/Images/facebook.png")
+@Url.Content("~/Images/heroAccent.png")
+@Url.Content("~/Images/orderedListOne.png")
+@Url.Content("~/Images/orderedListThree.png")
+@Url.Content("~/Images/orderedListTwo.png")
+@Url.Content("~/Images/twitter.png")
+
+NETWORK:
+*
+
+FALLBACK:
+/ @Url.Action("OnlineOnlyPage", "OfflineSupport")
+
