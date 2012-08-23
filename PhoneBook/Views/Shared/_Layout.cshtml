@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <title>@ViewBag.Title - Phone Book</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <link href="@BundleTable.Bundles.ResolveBundleUrl("~/Content/css")" rel="stylesheet" type="text/css" />
         <link href="@BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />
@@ -14,7 +14,7 @@
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here.", "Index", "Home")</p>
+                    <p class="site-title">@Html.ActionLink("Phone Book", "Index", "Home")</p>
                 </div>
                 <div class="float-right">
                     <section id="login">
@@ -23,7 +23,6 @@
                     <nav>
                         <ul id="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
                             <li>@Html.ActionLink("Contacts", "Index", "Contacts")</li>
                         </ul>
                     </nav>
@@ -39,12 +38,11 @@
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                    <p>&copy; @DateTime.Now.Year - <a href="http://www.Mehdi-Khalili.com">Mehdi Khalili</a></p>
                 </div>
                 <div class="float-right">
                     <ul id="social">
-                        <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
-                        <li><a href="http://twitter.com" class="twitter">Twitter</a></li>
+                        <li><a href="http://twitter.com/MehdiKhalili" class="twitter">Twitter</a></li>
                     </ul>
                 </div>
             </div>
