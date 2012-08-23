@@ -124,6 +124,7 @@
     <Compile Include="Data\Contact.cs" />
     <Compile Include="Data\DataContext.cs" />
     <Compile Include="Data\DevDataInitializer.cs" />
+    <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

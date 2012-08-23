@@ -1,6 +1,7 @@
 @using System.Web.Optimization
+@using PhoneBook.Extensions
 <!DOCTYPE html>
-<html lang="en" manifest="@Url.Action("AppCacheManifest", "OfflineSupport")">
+<html lang="en" @Html.ConditionalManifest()>
     <head>
         <meta charset="utf-8" />
         <title>@ViewBag.Title - Phone Book</title>
