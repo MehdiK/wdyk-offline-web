@@ -5,11 +5,11 @@
     <head>
         <meta charset="utf-8" />
         <title>@ViewBag.Title - Phone Book</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="@Url.Content("~/Scripts/modernizr-2.5.3.js")" type="text/javascript"></script>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <link href="@BundleTable.Bundles.ResolveBundleUrl("~/Content/css")" rel="stylesheet" type="text/css" />
         <link href="@BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />
-        <script src="@BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")"></script>
-        <meta name="viewport" content="width=device-width" />
     </head>
     <body>
         <header>
@@ -48,5 +48,6 @@
                 </div>
             </div>
         </footer>
+    <script src="@Url.Content("~/scripts/require.js")" data-main="@Url.Content("~/scripts/main")" type="text/javascript"></script>
     </body>
 </html>

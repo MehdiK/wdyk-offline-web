@@ -45,6 +45,7 @@ namespace PhoneBook
             RegisterRoutes(RouteTable.Routes);
 
             BundleTable.Bundles.RegisterTemplateBundles();
+            BundleTable.Bundles.IgnoreList.Ignore("modernizr*");
         }
     }
 }
