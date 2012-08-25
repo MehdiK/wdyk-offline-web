@@ -4,6 +4,8 @@
 }CACHE MANIFEST
 # forcing the browser to always refresh the cache when online @DateTime.Now
 
+# adding username to appcache so upon login the app cache gets overwritten @User.Identity.Name
+
 CACHE:
 # pages
 @Url.Action("Index", "Contacts")
