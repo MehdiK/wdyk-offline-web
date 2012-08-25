@@ -1,0 +1,6 @@
+﻿@model List<int>
+
+@foreach(var id in Model)
+{
+    @:@Url.Action("Edit", "Contacts", new { id })
+}
