@@ -9,13 +9,42 @@
 CACHE:
 # pages
 @Url.Action("Index", "Contacts")
-# edit pages for contacts
 @Html.Action("ContactsEdit", "OfflineSupport")
 
 # CSS & JS
-@BundleTable.Bundles.ResolveBundleUrl("~/Content/css")
-@BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")
-@BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")
+@Url.Content("~/Content/site.css")
+@Url.Content("~/Content/themes/base/jquery.ui.core.css")
+@Url.Content("~/Content/themes/base/jquery.ui.resizable.css")
+@Url.Content("~/Content/themes/base/jquery.ui.selectable.css")
+@Url.Content("~/Content/themes/base/jquery.ui.accordion.css")
+@Url.Content("~/Content/themes/base/jquery.ui.autocomplete.css")
+@Url.Content("~/Content/themes/base/jquery.ui.button.css")
+@Url.Content("~/Content/themes/base/jquery.ui.dialog.css")
+@Url.Content("~/Content/themes/base/jquery.ui.slider.css")
+@Url.Content("~/Content/themes/base/jquery.ui.tabs.css")
+@Url.Content("~/Content/themes/base/jquery.ui.datepicker.css")
+@Url.Content("~/Content/themes/base/jquery.ui.progressbar.css")
+@Url.Content("~/Content/themes/base/jquery.ui.theme.css")
+
+@Url.Content("~/Scripts/modernizr-2.0.6-development-only.js")
+@Url.Content("~/Scripts/modernizr-2.5.3.js")
+@Url.Content("~/Scripts/jquery-1.8.0.js")
+@Url.Content("~/Scripts/jquery-ui-1.8.23.js")
+@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")
+@Url.Content("~/Scripts/jquery.validate.js")
+@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")
+@Url.Content("~/Scripts/amplify.js")
+@Url.Content("~/Scripts/offline/connectivity.js")
+@Url.Content("~/Scripts/main.js")
+
+@*@Styles.Url("~/Content/css")
+@Styles.Url("~/Content/themes/base/css")
+@Scripts.Url("~/bundles/modernizr")
+
+@Scripts.Url("~/bundles/jquery")
+@Scripts.Url("~/bundles/jqueryui")
+@Scripts.Url("~/bundles/jqueryval")
+@Scripts.Url("~/bundles/offline")*@
 
 # Images and other static content #
 @Url.Content("~/Images/accent.png") 

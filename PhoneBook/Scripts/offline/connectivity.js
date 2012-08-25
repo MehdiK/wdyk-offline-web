@@ -1,12 +1,15 @@
-﻿define(['amplify'], function (amplify) {
+﻿App.connectivity = (function () {
+    var publisher;
+
     var publishConnectivityStatus = function (status) {
         if (status.type === "error")
-            amplify.publish('app-is-offline');
+            publisher.publish('app-is-offline');
         else
-            amplify.publish('app-is-online');
+            publisher.publish('app-is-online');
     };
 
-    var init = function () {
+    var init = function (pubsub) {
+        publisher = pubsub;
         window.applicationCache.addEventListener("error", publishConnectivityStatus);
         window.applicationCache.addEventListener("noupdate", publishConnectivityStatus);
         window.applicationCache.addEventListener("cached", publishConnectivityStatus);
@@ -16,4 +19,4 @@
     return {
         init: init
     };
-});
+}());
