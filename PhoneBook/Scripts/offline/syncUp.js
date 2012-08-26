@@ -9,7 +9,7 @@
             key = localStorage.key(i);
 
             record = JSON.parse(localStorage.getItem(key));
-            $.ajax({ data: record.data, url: record.url, type: 'POST' })
+            $.ajax({ data: record.form, url: record.url, type: 'POST' })
                 .done(function (response) { removeRecord(record); });
         }
     };

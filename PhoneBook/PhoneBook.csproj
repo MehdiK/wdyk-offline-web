@@ -232,8 +232,11 @@
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\offline\persistence.js" />
+    <Content Include="Scripts\offline\showOfflineRecords.js" />
     <Content Include="Scripts\offline\syncUp.js" />
     <Content Include="Scripts\README.txt" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

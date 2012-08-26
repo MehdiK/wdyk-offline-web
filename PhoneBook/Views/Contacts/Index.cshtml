@@ -10,7 +10,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+<table id="contacts-grid">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.FullName)
@@ -42,3 +42,12 @@
 }
 
 </table>
+
+<script type="text/template" id="contactRowTemplate">
+    <tr id="<%= Id %>" class="persisted-offline">
+        <td><%= FullName %></td>
+        <td><%= PhoneNumber %></td>
+        <td><%= Address %></td>
+        <td>Offline</td>
+    </tr>
+</script>

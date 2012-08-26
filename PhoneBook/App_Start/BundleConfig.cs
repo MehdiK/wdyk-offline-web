@@ -20,8 +20,10 @@ namespace PhoneBook
 
             bundles.Add(new ScriptBundle("~/bundles/offline").Include(
                 "~/Scripts/amplify*",
+                "~/Scripts/underscore*",
                 "~/Scripts/offline/connectivity.js",
                 "~/Scripts/offline/persistence.js",
+                "~/Scripts/offline/showOfflineRecords.js",
                 "~/Scripts/offline/syncUp.js",
                 "~/Scripts/main.js"));
 

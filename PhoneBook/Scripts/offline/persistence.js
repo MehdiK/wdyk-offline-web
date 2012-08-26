@@ -1,6 +1,22 @@
 ﻿App.persistence = (function () {
     var areWeOffline = false;
 
+    var serializeForm = function (form) {
+        var o = {};
+        var a = form.serializeArray();
+        $.each(a, function () {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
     var prepareForOfflinePersistence = function () {
         $(':submit').click(function (e) {
             var that = $(this);
@@ -14,7 +30,8 @@
                 offlineEntry = {
                     id: guid(),
                     url: window.location.href,
-                    data: form.serialize()
+                    form: form.serialize(),
+                    data: serializeForm(form)
                     };
                 
                 localStorage.setItem(offlineEntry.id, JSON.stringify(offlineEntry));
