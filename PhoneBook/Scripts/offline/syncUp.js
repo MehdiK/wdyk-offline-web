@@ -3,14 +3,29 @@
         localStorage.removeItem(record.id);
     };
 
+    var post = function (key, row) {
+        var record = JSON.parse(localStorage.getItem(key));
+        $.ajax({ data: record.form, url: record.url, type: 'POST' })
+            .done(function (response) {
+                removeRecord(record);
+                row.removeClass('syncing').addClass('synced');
+                row.find('.status').html('synced :)');
+            });
+    };
+
     var syncUp = function () {
-        var key, record, i;
+        var key, i, $offlineRow;
         for (i = 0; i < localStorage.length; i = i + 1) {
             key = localStorage.key(i);
 
-            record = JSON.parse(localStorage.getItem(key));
-            $.ajax({ data: record.form, url: record.url, type: 'POST' })
-                .done(function (response) { removeRecord(record); });
+            $offlineRow = $('tr#' + key);
+            $offlineRow
+                .removeClass('offlineRecord')
+                .addClass('syncing');
+
+            $offlineRow.find('.status').html('syncing...');
+
+            post(key, $offlineRow);
         }
     };
 

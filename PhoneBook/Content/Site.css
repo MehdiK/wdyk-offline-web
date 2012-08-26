@@ -459,6 +459,21 @@ ul#social li {
         background: url("../Images/twitter.png") no-repeat;
     }
 
+.offlineRecord
+{
+    background-color: #FFFFCB;
+}
+
+.syncing
+{
+    background-color: #66CCFF;
+}
+
+.synced
+{
+    background-color: #99FF66;
+}
+
 
 /********************
 *   Mobile Styles   *
@@ -635,3 +650,4 @@ ul#social li {
             width: auto;
         }
 }
+
