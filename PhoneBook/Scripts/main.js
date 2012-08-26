@@ -1,3 +1,5 @@
 ﻿$(function(){
-    App.connectivity.init(amplify);
+    App.connectivity.init();
+    App.persistence.init();
+    App.syncUp.init();
 });

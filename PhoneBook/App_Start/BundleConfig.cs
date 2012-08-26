@@ -21,6 +21,8 @@ namespace PhoneBook
             bundles.Add(new ScriptBundle("~/bundles/offline").Include(
                 "~/Scripts/amplify*",
                 "~/Scripts/offline/connectivity.js",
+                "~/Scripts/offline/persistence.js",
+                "~/Scripts/offline/syncUp.js",
                 "~/Scripts/main.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

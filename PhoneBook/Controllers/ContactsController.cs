@@ -35,6 +35,10 @@ namespace PhoneBook.Controllers
             var dbContact = Map(contact);
             _dataContext.Contacts.Add(dbContact);
             _dataContext.SaveChanges();
+
+            if (Request.IsAjaxRequest())
+                return Json(new { succeeded = true });
+
             return RedirectToAction("Index");
         }
 
@@ -61,6 +65,10 @@ namespace PhoneBook.Controllers
             contact.PhoneNumber = model.PhoneNumber;
             contact.FullName = model.FullName;
             _dataContext.SaveChanges();
+
+            if (Request.IsAjaxRequest())
+                return Json(new { succeeded = true });
+
             return RedirectToAction("Index");
         }
 

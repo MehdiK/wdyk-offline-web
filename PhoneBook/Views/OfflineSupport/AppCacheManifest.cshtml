@@ -1,18 +1,18 @@
 ﻿@using System.Web.Optimization
+@using PhoneBook.Extensions
 @{
     HttpContext.Current.Response.ContentType = "text/cache-manifest";
 }CACHE MANIFEST
-# forcing the browser to always refresh the cache when online @DateTime.Now
 
-# adding username to appcache so upon login the app cache gets overwritten @User.Identity.Name
+#Manifest for assembly last modified at @Html.WebSiteLastPublishDate() for user @User.Identity.Name
 
 CACHE:
 # pages
 @Url.Action("Index", "Contacts")
+@Url.Action("Create", "Contacts")
 @Html.Action("ContactsEdit", "OfflineSupport")
 
-# CSS & JS
-@Url.Content("~/Content/site.css")
+# CSS & JS - libs
 @Url.Content("~/Content/themes/base/jquery.ui.core.css")
 @Url.Content("~/Content/themes/base/jquery.ui.resizable.css")
 @Url.Content("~/Content/themes/base/jquery.ui.selectable.css")
@@ -34,17 +34,14 @@ CACHE:
 @Url.Content("~/Scripts/jquery.validate.js")
 @Url.Content("~/Scripts/jquery.validate.unobtrusive.js")
 @Url.Content("~/Scripts/amplify.js")
+
+# CSS & JS - app
+@Url.Content("~/Content/site.css")
+
 @Url.Content("~/Scripts/offline/connectivity.js")
+@Url.Content("~/Scripts/offline/persistence.js")
+@Url.Content("~/Scripts/offline/syncUp.js")
 @Url.Content("~/Scripts/main.js")
-
-@*@Styles.Url("~/Content/css")
-@Styles.Url("~/Content/themes/base/css")
-@Scripts.Url("~/bundles/modernizr")
-
-@Scripts.Url("~/bundles/jquery")
-@Scripts.Url("~/bundles/jqueryui")
-@Scripts.Url("~/bundles/jqueryval")
-@Scripts.Url("~/bundles/offline")*@
 
 # Images and other static content #
 @Url.Content("~/Images/accent.png") 

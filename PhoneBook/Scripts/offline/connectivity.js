@@ -1,15 +1,12 @@
 ﻿App.connectivity = (function () {
-    var publisher;
-
     var publishConnectivityStatus = function (status) {
         if (status.type === "error")
-            publisher.publish('app-is-offline');
+            amplify.publish('app-is-offline');
         else
-            publisher.publish('app-is-online');
+            amplify.publish('app-is-online');
     };
 
-    var init = function (pubsub) {
-        publisher = pubsub;
+    var init = function () {
         window.applicationCache.addEventListener("error", publishConnectivityStatus);
         window.applicationCache.addEventListener("noupdate", publishConnectivityStatus);
         window.applicationCache.addEventListener("cached", publishConnectivityStatus);

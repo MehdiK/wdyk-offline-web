@@ -12,5 +12,12 @@ namespace PhoneBook.Extensions
 
             return new MvcHtmlString(string.Empty);
         }
+
+        public static MvcHtmlString WebSiteLastPublishDate (this HtmlHelper helper) 
+        {
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            System.IO.FileInfo fileInfo = new System.IO.FileInfo(assembly.Location);
+            return new MvcHtmlString(fileInfo.LastWriteTime.ToString());
+        }
     }
 }
